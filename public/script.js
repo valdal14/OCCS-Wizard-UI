@@ -18,8 +18,30 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Form submit
-document.querySelector("#btnSubmit").addEventListener("click", function(e) {
-  e.preventDefault();
+document.querySelector("#btnSubmit").addEventListener("click", function() {
+  fetch("/downloadProject", {
+    method: "POST",
+    headers: new Headers({
+      "Content-Type": "application/json"
+    }),
+    body: JSON.stringify({
+      //data to send
+      extId: document.querySelector("#extId").value,
+      devName: document.querySelector("#devName").value,
+      extDesc: document.querySelector("#extDesc").value,
+      devId: document.querySelector("#devId").value,
+      extName: document.querySelector("#extName").value
+    })
+  })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
 });
 
 // Validation UI inputs

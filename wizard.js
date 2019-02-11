@@ -6,15 +6,45 @@ const beautify = require("json-beautify");
 
 class Wizard {
   constructor() {
-    this._extensionId,
-      this._developerID,
-      this._createdBy,
-      this._extensionName,
-      this._description;
+    this._extensionId;
+    this._developerID;
+    this._createdBy;
+    this._extensionName;
+    this._description;
+    this._developerName;
+    this._extensionDescription;
     this._version = 1;
     //YYYY-MM-DD
     this._created = Wizard.creationDate();
     this._path = os.homedir();
+  }
+
+  set developerName(name) {
+    if (name.length >= 3) {
+      this._developerName = name;
+    } else {
+      throw new Error(
+        "Developer name not valid, it must be a string made of at least 4 characters: \n\r"
+      );
+    }
+  }
+
+  get developerName() {
+    return this._developerName;
+  }
+
+  set extensionDescription(desc) {
+    if (desc.length >= 4) {
+      this._extensionDescription = desc;
+    } else {
+      throw new Error(
+        "Extension Description not valid, it must be a string made of at least 5 characters: \n\r"
+      );
+    }
+  }
+
+  get extensionDescription() {
+    return this._extensionDescription;
   }
 
   set extensionId(ext) {
@@ -280,11 +310,9 @@ class Wizard {
           }
         );
 
-        console.log(
-          `Your new ${
-            this._extensionName
-          } widget project structure has been saved in: \n ${curDir}`
-        );
+        return `Your new ${
+          this._extensionName
+        } widget project structure has been saved in: \n ${curDir}`;
       }
     } catch (error) {
       throw new Error(error);
