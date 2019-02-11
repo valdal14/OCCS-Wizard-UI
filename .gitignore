@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# mac files
+.DS_Store
+
+# photoshop graphics
+.psd 

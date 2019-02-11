@@ -1,0 +1,38 @@
+{
+  "name": "occs-wizard-ui",
+  "version": "1.0.0",
+  "description": "Tool to create base projects for developing widgets and extensions for Oracle Commerce Cloud",
+  "main": "app.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec",
+    "start": "./node_modules/.bin/nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valdal14/OCCS-Wizard-UI.git"
+  },
+  "keywords": [
+    "Oracle",
+    "Commerce",
+    "Cloud"
+  ],
+  "author": "@valdal14",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valdal14/OCCS-Wizard-UI/issues"
+  },
+  "homepage": "https://github.com/valdal14/OCCS-Wizard-UI#readme",
+  "devDependencies": {
+    "jasmine-node": "^1.16.2",
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "btoa": "^1.2.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "json-beautify": "^1.0.1",
+    "node-fetch": "^2.3.0",
+    "serve-static": "^1.13.2"
+  }
+}
