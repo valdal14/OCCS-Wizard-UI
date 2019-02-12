@@ -1,3 +1,7 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 nav {
   background-color: #9376e2 !important;
 }
@@ -85,4 +89,26 @@ img {
 
 .modalBodyError {
   color: brown;
+}
+
+.headerContainer {
+  margin: 0 auto;
+  display: block;
+  background-image: url("./images/bannerBackground.jpg");
+  background-repeat: no-repeat;
+  min-height: 367px;
+  text-align: center;
+}
+
+.textHeadContainer {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#occsText {
+  color: #9376e2;
 }

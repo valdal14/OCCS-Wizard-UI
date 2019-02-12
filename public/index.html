@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>.::. OCCS Widgets Wizard .::.</title>
+    <title>.::. OCCS Wizard .::.</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
     <!-- Materialize -->
     <link
       rel="stylesheet"
@@ -60,7 +64,7 @@
 
     <ul class="sidenav" id="mobile-demo">
       <div class="smallLogoMobile">
-        OCCS Widgets Wizard
+        OCCS Wizard
         <hr />
       </div>
       <li>
@@ -82,15 +86,21 @@
       </li>
     </ul>
     <!-- END OF NAVBAR -->
-    <div class="container">
-      <!-- Container -->
 
-      <!-- Body Content -->
-      <div class="row">
-        Body content goes here
+    <!-- Header Content -->
+    <div class="row">
+      <div class="headerContainer">
+        <div class="grid-example col s12 m12">
+          <div class="textHeadContainer">
+            <h1 id="occsText"></h1>
+          </div>
+        </div>
       </div>
-      <!-- Body Content -->
+    </div>
+    <!-- Header Content -->
 
+    <!-- Container -->
+    <div class="container">
       <!-- Form -->
       <div class="row">
         <div class="grid-example col s12 m6">
@@ -170,7 +180,7 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">OCCS Widgets Wizard</h5>
+            <h5 class="white-text">OCCS Wizard</h5>
             <p class="grey-text text-lighten-4">
               Tool to create base projects for developing widgets and extensions
               for Oracle Commerce Cloud
@@ -228,10 +238,8 @@
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
       <div class="modal-content">
-        <h4>OCCS Widgets Wizard</h4>
-        <div class="" id="modalContent">
-          //
-        </div>
+        <h4>OCCS Wizard</h4>
+        <div class="" id="modalContent"></div>
       </div>
       <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat"

@@ -197,3 +197,47 @@ document.querySelector("#extName").addEventListener("focusout", function(e) {
     );
   }
 });
+
+// OCCS Text
+function changeText() {
+  setTimeout(function() {
+    document.querySelector("#occsText").textContent = "Welcome to OCCS Wizard";
+    document.querySelector("#occsText").classList.add("animated", "fadeInLeft");
+  }, 1000);
+
+  setTimeout(function() {
+    document.querySelector("#occsText").textContent = "your tool to create";
+    document
+      .querySelector("#occsText")
+      .classList.remove("animated", "fadeInLeft");
+    document.querySelector("#occsText").classList.add("animated", "fadeInUp");
+  }, 2500);
+
+  setTimeout(function() {
+    document.querySelector("#occsText").textContent = "Oracle Commerce Cloud";
+    document
+      .querySelector("#occsText")
+      .classList.remove("animated", "fadeInUp");
+    document.querySelector("#occsText").classList.add("animated", "fadeInDown");
+  }, 4000);
+
+  setTimeout(function() {
+    document.querySelector("#occsText").textContent = "EXTENSIONS";
+    document
+      .querySelector("#occsText")
+      .classList.remove("animated", "fadeInDown");
+    document.querySelector("#occsText").classList.add("animated", "flip");
+  }, 5500);
+
+  setTimeout(function() {
+    document.querySelector("#occsText").style.marginTop = "15%";
+    document.querySelector("#occsText").style.textShadow = "0px 2px 3px #555";
+    document.querySelector("#occsText").style.letterSpacing = "0.10em";
+    document.querySelector("#occsText").style.fontSize = "75px";
+    document.querySelector("#occsText").textContent = "OCCS WIZARD";
+    document.querySelector("#occsText").classList.remove("animated", "flip");
+    document.querySelector("#occsText").classList.add("animated", "bounce");
+  }, 7000);
+}
+
+changeText();

@@ -11,40 +11,10 @@ class Wizard {
     this._createdBy;
     this._extensionName;
     this._description;
-    this._developerName;
-    this._extensionDescription;
     this._version = 1;
     //YYYY-MM-DD
     this._created = Wizard.creationDate();
     this._path = os.homedir();
-  }
-
-  set developerName(name) {
-    if (name.length >= 3) {
-      this._developerName = name;
-    } else {
-      throw new Error(
-        "Developer name not valid, it must be a string made of at least 4 characters: \n\r"
-      );
-    }
-  }
-
-  get developerName() {
-    return this._developerName;
-  }
-
-  set extensionDescription(desc) {
-    if (desc.length >= 4) {
-      this._extensionDescription = desc;
-    } else {
-      throw new Error(
-        "Extension Description not valid, it must be a string made of at least 5 characters: \n\r"
-      );
-    }
-  }
-
-  get extensionDescription() {
-    return this._extensionDescription;
   }
 
   set extensionId(ext) {
@@ -114,7 +84,11 @@ class Wizard {
    */
   static creationDate() {
     let date = new Date();
-    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    let month = date.getMonth();
+    if (month.toString().length === 1) {
+      month = "0" + (month + 1).toString();
+    }
+    return `${date.getFullYear()}-${month}-${date.getDate()}`;
   }
 
   /**
@@ -210,7 +184,6 @@ class Wizard {
 
     try {
       if (!fs.existsSync(curDir)) {
-        console.log("I am here");
         return "The widget folder already exists in you HDD";
       } else {
         // create the container folder
