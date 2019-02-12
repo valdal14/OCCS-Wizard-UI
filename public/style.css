@@ -78,3 +78,11 @@ img {
   background-color: #745dc6 !important;
   margin-top: 8px;
 }
+
+.modalBodyResult {
+  color: green;
+}
+
+.modalBodyError {
+  color: brown;
+}

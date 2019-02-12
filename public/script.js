@@ -12,13 +12,21 @@ function enableFormSubmit(extId, devName, extDesc, devId, extName) {
   }
 }
 
+// Navbar events
 document.addEventListener("DOMContentLoaded", function() {
   var elems = document.querySelectorAll(".sidenav");
   var instances = M.Sidenav.init(elems);
 });
 
+// Modal trigger
+document.addEventListener("DOMContentLoaded", function() {
+  var elems = document.querySelectorAll(".modal");
+  var instances = M.Modal.init(elems);
+});
+
 // Form submit
-document.querySelector("#btnSubmit").addEventListener("click", function() {
+document.querySelector("#btnSubmit").addEventListener("click", function(e) {
+  e.preventDefault();
   fetch("/downloadProject", {
     method: "POST",
     headers: new Headers({
@@ -38,9 +46,34 @@ document.querySelector("#btnSubmit").addEventListener("click", function() {
     })
     .then(function(data) {
       console.log(data);
+      if (data.message.status === 200) {
+        document.querySelector(
+          "#modalContent"
+        ).textContent = `You new extension with name ${
+          data.message.extension
+        } has been saved in: ${data.message.directory}`;
+        var space = document.createElement("br");
+        document.querySelector("#modalContent").appendChild(space);
+        document.querySelector("#modalContent").classList.add("modalBodyError");
+        // add a link to the ui
+        var link = document.createElement("a");
+        link.setAttribute(
+          "href",
+          data.message.directory + "/" + data.message.extension
+        );
+        link.textContent = "Download the file";
+        document.querySelector("#modalContent").appendChild(link);
+      } else {
+        document.querySelector("#modalContent").textContent = data.message;
+        document
+          .querySelector("#modalContent")
+          .classList.add("modalBodyResult");
+      }
     })
     .catch(function(error) {
-      console.log(error);
+      document.querySelector("#modalContent").textContent =
+        "There was a problem generating your extension, please verify your connection and try again!!!";
+      document.querySelector("#modalContent").classList.add("modalBodyResult");
     });
 });
 

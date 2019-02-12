@@ -210,7 +210,8 @@ class Wizard {
 
     try {
       if (!fs.existsSync(curDir)) {
-        console.log("The widget folder already exists in you HDD \n\r");
+        console.log("I am here");
+        return "The widget folder already exists in you HDD";
       } else {
         // create the container folder
         fs.mkdirSync(`${curDir}/${this._extensionName}`);
@@ -310,12 +311,16 @@ class Wizard {
           }
         );
 
-        return `Your new ${
-          this._extensionName
-        } widget project structure has been saved in: \n ${curDir}`;
+        var result = {
+          status: 200,
+          directory: curDir,
+          extension: this._extensionName
+        };
+
+        return result;
       }
     } catch (error) {
-      throw new Error(error);
+      return "There was an error generating the file";
     }
   }
 }

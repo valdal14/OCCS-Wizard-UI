@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/valdal14/OCCS-Wizard-UI#readme",
   "devDependencies": {
-    "jasmine-node": "^1.16.2",
+    "jasmine-node": "^2.0.1",
     "nodemon": "^1.18.9"
   },
   "dependencies": {

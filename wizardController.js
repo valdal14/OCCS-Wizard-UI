@@ -17,8 +17,12 @@ module.exports = function downloadProject(req, res) {
 
     const result = wizard.createProjectStructure();
 
-    res.status(200).send({ message: result });
+    if (result === "The widget folder already exists in you HDD") {
+      res.status(200).send({ message: result });
+    } else {
+      res.status(200).send({ message: result });
+    }
   } catch (error) {
-    res.status(500).send({ message: error });
+    res.status(200).send({ message: "There was an error generating the file" });
   }
 };
