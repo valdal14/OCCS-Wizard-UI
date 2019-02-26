@@ -136,7 +136,7 @@ class Wizard {
         // Dependencies
         ['knockout', 'jquery'],
         // Module Implementation
-        function($, ko) {
+        function(ko, $) {
            // We recommend enabling strict checking mode
            'use strict';
            // Private variables and functions can be defined here...
